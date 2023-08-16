@@ -1,4 +1,4 @@
-import 'package:capston/chatting/main_screen.dart';
+import 'package:capston/chatting/login_page.dart';
 import 'package:capston/mypage/my_user.dart';
 import 'package:capston/mypage/queryDialog.dart';
 import 'package:capston/palette.dart';
@@ -104,7 +104,7 @@ class ProfileState extends State<Profile> {
                                       Navigator.pushReplacement(context,
                                           MaterialPageRoute(
                                         builder: (context) {
-                                          return const LoginSignupScreen();
+                                          return const LoginPage();
                                         },
                                       ));
                                     },

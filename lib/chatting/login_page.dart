@@ -11,14 +11,15 @@ import 'package:modal_progress_hud_nsn/modal_progress_hud_nsn.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_storage/firebase_storage.dart';
 
-class LoginSignupScreen extends StatefulWidget {
-  const LoginSignupScreen({Key? key}) : super(key: key);
+// 로그인과 회원가입 페이지
+class LoginPage extends StatefulWidget {
+  const LoginPage({Key? key}) : super(key: key);
 
   @override
-  _LoginSignupScreenState createState() => _LoginSignupScreenState();
+  _LoginPageState createState() => _LoginPageState();
 }
 
-class _LoginSignupScreenState extends State<LoginSignupScreen> {
+class _LoginPageState extends State<LoginPage> {
   final TextEditingController emailController = TextEditingController();
   final TextEditingController passwordController = TextEditingController();
   static const secureStorage = FlutterSecureStorage();
@@ -28,7 +29,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
   final storage = FirebaseStorage.instance;
   final firestore = FirebaseFirestore.instance;
 
-  bool bSignupScreen = false;
+  bool bSignup = false;
 
   bool showSpinner = false;
   final _formKey = GlobalKey<FormState>();
@@ -87,7 +88,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
         context,
         MaterialPageRoute(
           builder: (context) {
-            return MyHomePage(
+            return MainPage(
               currentUserID: currentUserID,
             );
           },
@@ -175,7 +176,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   duration: const Duration(milliseconds: 500),
                   curve: Curves.easeIn,
                   padding: const EdgeInsets.all(20.0),
-                  height: bSignupScreen ? 280.0 : 250.0,
+                  height: bSignup ? 280.0 : 250.0,
                   width: MediaQuery.of(context).size.width - 40,
                   margin: const EdgeInsets.symmetric(horizontal: 20.0),
                   decoration: BoxDecoration(
@@ -198,7 +199,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  bSignupScreen = false;
+                                  bSignup = false;
                                 });
                               },
                               child: Column(
@@ -208,11 +209,11 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                     style: TextStyle(
                                         fontSize: 16,
                                         fontWeight: FontWeight.bold,
-                                        color: !bSignupScreen
+                                        color: !bSignup
                                             ? Palette.lightBlack
                                             : Palette.textColor1),
                                   ),
-                                  if (!bSignupScreen)
+                                  if (!bSignup)
                                     Container(
                                       margin: const EdgeInsets.only(
                                           top: 4, right: 0.5),
@@ -226,7 +227,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             GestureDetector(
                               onTap: () {
                                 setState(() {
-                                  bSignupScreen = true;
+                                  bSignup = true;
                                 });
                               },
                               child: Column(
@@ -239,28 +240,28 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                                         style: TextStyle(
                                             fontSize: 16,
                                             fontWeight: FontWeight.bold,
-                                            color: bSignupScreen
+                                            color: bSignup
                                                 ? Palette.lightBlack
                                                 : Palette.textColor1),
                                       ),
                                       const SizedBox(
                                         width: 10,
                                       ),
-                                      if (bSignupScreen)
+                                      if (bSignup)
                                         GestureDetector(
                                           onTap: () {
                                             showAlert(context);
                                           },
                                           child: Icon(
                                             Icons.image_rounded,
-                                            color: bSignupScreen
+                                            color: bSignup
                                                 ? Palette.brightBlue
                                                 : Colors.grey[300],
                                           ),
                                         )
                                     ],
                                   ),
-                                  if (bSignupScreen)
+                                  if (bSignup)
                                     Container(
                                       margin: const EdgeInsets.fromLTRB(
                                           0, 3, 35, 0),
@@ -274,7 +275,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                           ],
                         ),
                         // SIGNUP CONTAINER =====================================
-                        if (bSignupScreen)
+                        if (bSignup)
                           Container(
                             margin: const EdgeInsets.only(top: 20),
                             child: Form(
@@ -412,7 +413,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             ),
                           ),
                         // LOGIN CONTAINER =====================================
-                        if (!bSignupScreen)
+                        if (!bSignup)
                           Container(
                             margin: const EdgeInsets.only(top: 20),
                             child: Form(
@@ -513,11 +514,11 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                   ),
                 ),
               ),
-              //텍스트 폼 필드
+              // 로그인 또는 회원가입 정보입력
               AnimatedPositioned(
                 duration: const Duration(milliseconds: 500),
                 curve: Curves.easeIn,
-                top: bSignupScreen ? 530 : 490,
+                top: bSignup ? 530 : 490,
                 right: 0,
                 left: 0,
                 child: Center(
@@ -533,7 +534,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                         setState(() {
                           showSpinner = true;
                         });
-                        if (bSignupScreen) {
+                        if (bSignup) {
                           _tryValidation();
 
                           try {
@@ -575,7 +576,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
 
                             currentUserID = newUser.user!.uid;
                             setState(() {
-                              bSignupScreen = false;
+                              bSignup = false;
                               showSpinner = false;
                             });
                           } catch (e) {
@@ -592,7 +593,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                             });
                           }
                         }
-                        if (!bSignupScreen) {
+                        if (!bSignup) {
                           _tryValidation();
 
                           try {
@@ -612,7 +613,7 @@ class _LoginSignupScreenState extends State<LoginSignupScreen> {
                               context,
                               MaterialPageRoute(
                                 builder: (context) {
-                                  return MyHomePage(
+                                  return MainPage(
                                     currentUserID: currentUserID,
                                   );
                                 },

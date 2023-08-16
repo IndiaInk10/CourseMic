@@ -3,17 +3,17 @@ import 'package:capston/palette.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:capston/chatting/chat/chat_list.dart';
-import 'mypage/profile.dart';
+import 'package:capston/mypage/profile.dart';
 
-class MyHomePage extends StatefulWidget {
+class MainPage extends StatefulWidget {
   final String currentUserID;
-  const MyHomePage({super.key, required this.currentUserID});
+  const MainPage({super.key, required this.currentUserID});
 
   @override
-  _MyHomePageState createState() => _MyHomePageState();
+  _MainPageState createState() => _MainPageState();
 }
 
-class _MyHomePageState extends State<MyHomePage> {
+class _MainPageState extends State<MainPage> {
   int _currentIndex = 0;
 
   @override
