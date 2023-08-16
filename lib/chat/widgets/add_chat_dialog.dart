@@ -38,15 +38,15 @@ class _AddChatDialogState extends State<AddChatDialog> {
       widget.chatListParent.currUserDocRef.update({
         'chatList': FieldValue.arrayUnion([doc.id]),
       }).then((value) {
-        print("Value Added to Array");
+        // print("Value Added to Array");
         addEnterEventLog(
             roomID: doc.id, uid: widget.chatListParent.currentUser.uid);
         FirebaseMessaging.instance.subscribeToTopic(doc.id);
       }).catchError((error) {
-        print("Failed to add value to array: $error");
+        // print("Failed to add value to array: $error");
       });
     }).catchError((error) {
-      print("Failed to add document: $error");
+      // print("Failed to add document: $error");
     });
   }
 

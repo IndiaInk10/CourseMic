@@ -44,7 +44,7 @@ class _ImportantMessagesPageState extends State<ImportantMessagesPage> {
         return null;
       }
     } catch (error) {
-      print('Failed to get latest quiz: $error');
+      // print('Failed to get latest quiz: $error');
       return null;
     }
   }
@@ -162,7 +162,7 @@ class _ImportantMessagesPageState extends State<ImportantMessagesPage> {
                           ),
                           TextButton(
                             onPressed: () {
-                              print(documents[index].id);
+                              // print(documents[index].id);
                               deleteImpMsg(widget.roomID, impMsgId);
                               Navigator.pop(context);
                             },
@@ -235,9 +235,9 @@ Future<void> deleteImpMsg(String roomID, String impMsgId) async {
         .collection('imp_msg')
         .doc(impMsgId)
         .delete();
-    print('중요한 메시지 삭제 완료!');
+    // print('중요한 메시지 삭제 완료!');
   } catch (error) {
-    print('중요한 메시지 삭제 실패!: $error');
+    // print('중요한 메시지 삭제 실패!: $error');
   }
 }
 

@@ -159,15 +159,15 @@ class _ChatBubblesState extends State<ChatBubbles> {
         if (reactMap.containsKey(user!.uid) && reactMap[user!.uid] == react) {
           reactMap.remove(user!.uid);
           await docSnapshot.reference.update({'react': reactMap});
-          print('메세지 반응 삭제 성공!');
+          // print('메세지 반응 삭제 성공!');
         } else {
           reactMap[user!.uid] = react;
           await docSnapshot.reference.update({'react': reactMap});
-          print('메세지 반응 저장 성공!');
+          // print('메세지 반응 저장 성공!');
         }
       }
     } catch (error) {
-      print('메세지 반응 저장 실패!');
+      // print('메세지 반응 저장 실패!');
     }
   }
 

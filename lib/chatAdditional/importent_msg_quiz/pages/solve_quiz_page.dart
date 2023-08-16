@@ -50,13 +50,13 @@ class solve_quizState extends State<solve_quiz> {
       FCMLocalNotification.sendQuizNotification(
           roomID: widget.roomID, roomName: widget.chatPageState.chat.roomName);
     } catch (error) {
-      print('퀴즈 세팅 실패: $error');
+      // print('퀴즈 세팅 실패: $error');
     }
   }
 
   Future<void> updateOrCreateQuiz() async {
     try {
-      print('그 메서드 불러와짐');
+      // print('그 메서드 불러와짐');
 
       final CollectionReference quizRef = widget.chatPageState.chatDocRef
           .collection('quiz'); // 해당 방의 퀴즈 컬렉션 레퍼런스
@@ -104,7 +104,7 @@ class solve_quizState extends State<solve_quiz> {
         await setQuiz(newTimestamp, quizPasser);
       }
     } catch (error) {
-      print('퀴즈 업데이트 또는 생성 실패: $error');
+      // print('퀴즈 업데이트 또는 생성 실패: $error');
     }
   }
 

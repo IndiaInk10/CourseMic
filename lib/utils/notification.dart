@@ -91,11 +91,11 @@ class FCMLocalNotification {
 
     if (response.statusCode == 200) {
       // Notification sent successfully
-      print("성공적으로 전송되었습니다.");
-      print("$title $content");
+      // print("성공적으로 전송되었습니다.");
+      // print("$title $content");
     } else {
       // Failed to send notification
-      print("전송에 실패하였습니다.");
+      // print("전송에 실패하였습니다.");
     }
   }
 
@@ -125,11 +125,11 @@ class FCMLocalNotification {
 
     if (response.statusCode == 200) {
       // Notification sent successfully
-      print("성공적으로 전송되었습니다.");
-      print("$title $content");
+      // print("성공적으로 전송되었습니다.");
+      // print("$title $content");
     } else {
       // Failed to send notification
-      print("전송에 실패하였습니다.");
+      // print("전송에 실패하였습니다.");
     }
   }
 
@@ -242,8 +242,8 @@ class FCMLocalNotification {
           ),
           payload: message.data['roomID'],
         );
-        print(
-            "foreground message alert ${notification.hashCode}, ${notification.title}, ${notification.body}");
+        // print(
+        //     "foreground message alert ${notification.hashCode}, ${notification.title}, ${notification.body}");
       }
     });
 

@@ -580,7 +580,7 @@ class _LoginPageState extends State<LoginPage> {
                               showSpinner = false;
                             });
                           } catch (e) {
-                            print(e);
+                            // print(e);
                             if (!mounted) return;
                             ScaffoldMessenger.of(context).showSnackBar(
                               const SnackBar(
@@ -623,7 +623,7 @@ class _LoginPageState extends State<LoginPage> {
                               showSpinner = false;
                             });
                           } catch (e) {
-                            print(e);
+                            // print(e);
                             setState(() {
                               showSpinner = false;
                             });

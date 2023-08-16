@@ -196,7 +196,7 @@ class ChatPageState extends State<ChatPage> {
         return null;
       }
     } catch (error) {
-      print('Failed to get latest quiz: $error');
+      // print('Failed to get latest quiz: $error');
       return null;
     }
   }
@@ -234,7 +234,7 @@ class ChatPageState extends State<ChatPage> {
         !isUserInPasserList(latestQuiz)) {
       Duration difference = calculateDifference(latestQuiz);
       int durationMilliseconds = difference.inMilliseconds;
-      print('가장 최근 퀴즈 있음');
+      // print('가장 최근 퀴즈 있음');
       final snackBar = SnackBar(
         duration: Duration(milliseconds: durationMilliseconds),
         behavior: SnackBarBehavior.floating,
@@ -246,7 +246,7 @@ class ChatPageState extends State<ChatPage> {
         action: SnackBarAction(
           label: '풀기',
           onPressed: () {
-            print('스낵바 버튼 눌림');
+            // print('스낵바 버튼 눌림');
             Navigator.push(
               context,
               MaterialPageRoute(
@@ -261,7 +261,7 @@ class ChatPageState extends State<ChatPage> {
       ScaffoldMessenger.of(context).showSnackBar(snackBar);
     } else {
       //! 스낵바 안보일 때 처리
-      print('가장 최근 퀴즈가 없음');
+      // print('가장 최근 퀴즈가 없음');
     }
   }
 

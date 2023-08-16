@@ -29,8 +29,8 @@ Future<void> saveImportantMessage(String messageDetail, String messageId,
       'user_id': userId,
       'room_id': roomId,
     });
-    print('중요한 메시지 저장 성공!');
+    // print('중요한 메시지 저장 성공!');
   } catch (error) {
-    print('중요한 메시지 저장 실패: $error');
+    // print('중요한 메시지 저장 실패: $error');
   }
 }

@@ -17,8 +17,6 @@ class Palette {
   static const Color toastGray = Color(0xFF505050);
 
   // Pastel
-  static const int _primaryValue = 0xFF763CF7;
-  static const Color pastelPurple = Color(_primaryValue);
   static const Color pastelAqua = Color(0xFF8EF2EC);
   static const Color pastelBlue = Color(0xFF75C6FF);
   static const Color pastelPink = Color(0xFFCA7EFF);
@@ -34,6 +32,8 @@ class Palette {
 
   static const Color pastelRed = Color(0xFFf7763c);
 
+  static const int _primaryValue = 0xFF763CF7;
+  static const Color pastelPurple = Color(_primaryValue);
   static const MaterialColor primary = MaterialColor(
     _primaryValue,
     <int, Color>{
