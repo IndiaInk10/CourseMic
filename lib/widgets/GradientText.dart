@@ -1,4 +1,4 @@
-import 'package:capston/palette.dart';
+import 'package:capston/utils/palette.dart';
 import 'package:flutter/material.dart';
 
 class GradientText extends StatelessWidget {

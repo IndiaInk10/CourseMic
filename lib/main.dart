@@ -1,8 +1,8 @@
-import 'package:capston/chatting/login_page.dart';
-import 'package:capston/palette.dart';
+import 'package:capston/main/pages/login_page.dart';
+import 'package:capston/utils/palette.dart';
 import 'package:flutter/material.dart';
 import 'package:firebase_core/firebase_core.dart';
-import 'package:capston/firebase_options.dart';
+import 'package:capston/utils/firebase_options.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 
 void main() async {

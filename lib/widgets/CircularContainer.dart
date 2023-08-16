@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:capston/palette.dart';
+import 'package:capston/utils/palette.dart';
 
 class CircularContainer extends Container {
   CircularContainer({super.key, super.child});
