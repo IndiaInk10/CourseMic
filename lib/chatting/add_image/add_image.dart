@@ -46,7 +46,6 @@ class _AddImageState extends State<AddImage> {
   }
 
   void _pickImageFromGallery() async {
-    //FilePickerResult? filePickResult = await FilePicker.platform.pickFiles();
     XFile? pickedFile = await ImagePicker().pickImage(
       source: ImageSource.gallery,
       maxHeight: 100,

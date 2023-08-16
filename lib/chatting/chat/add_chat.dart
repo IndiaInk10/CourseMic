@@ -105,7 +105,6 @@ class _AddChatState extends State<AddChat> {
                       },
                       textAlign: TextAlign.center,
                       decoration: const InputDecoration(
-                        // border: const OutlineInputBorder(),
                         hintText: "톡방 이름",
                         hintStyle: TextStyle(
                           fontSize: 14,

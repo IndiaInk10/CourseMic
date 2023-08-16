@@ -210,7 +210,6 @@ class _ChatBubblesState extends State<ChatBubbles> {
                   style: const TextStyle(color: Colors.white, fontSize: 12),
                 ),
                 const SizedBox(width: 4),
-                //const VerticalDivider(color: Colors.white, thickness: 1),
               ],
             );
           }).toList(),
@@ -627,50 +626,6 @@ class _ChatBubblesState extends State<ChatBubbles> {
           ),
         ),
       );
-      // return FilledButton.tonalIcon(
-      //   style: FilledButton.styleFrom(
-      //       backgroundColor: Palette.lightGray,
-      //       alignment: Alignment.center,
-      //       padding: const EdgeInsets.only(left: 8, right: 8)),
-      //   onPressed: () async {
-      //     showDialog(
-      //       context: context,
-      //       builder: (BuildContext context) => Dialog(
-      //         child: SizedBox(
-      //           width: 100,
-      //           child: SingleChildScrollView(
-      //             child: Center(
-      //               child: Column(children: [
-      //                 for (var userID in widget.readers)
-      //                   Text(
-      //                     widget.chatDataParent.userNameList[userID]!,
-      //                   ),
-      //               ]),
-      //             ),
-      //           ),
-      //         ),
-      //       ),
-      //     );
-      //   },
-      //   icon: const Icon(Icons.done_all_rounded, color: Palette.brightBlue),
-      //   label: Row(
-      //     mainAxisSize: MainAxisSize.min,
-      //     children: [
-      //       Text(
-      //         widget.readers.length.toString(),
-      //         style: const TextStyle(
-      //           fontWeight: FontWeight.bold,
-      //           color: Palette.brightBlue,
-      //           fontSize: 18,
-      //         ),
-      //       ),
-      //       const Text(
-      //         ' 명이 읽음',
-      //         style: TextStyle(color: Palette.lightBlack, fontSize: 10),
-      //       ),
-      //     ],
-      //   ),
-      // );
     } else {
       return Container();
     }
@@ -693,7 +648,6 @@ class _ChatBubblesState extends State<ChatBubbles> {
             IgnorePointer(
                 ignoring: widget.chatDataParent.chat.bEndProject,
                 child: reactbuttonBar()),
-            // dialogDivider(),
             TextButton(
               onPressed: () {
                 Navigator.push(
@@ -732,7 +686,6 @@ class _ChatBubblesState extends State<ChatBubbles> {
                     },
               child: const Text('중요메세지 설정'),
             ),
-            // dialogDivider(),
             const SizedBox(
               height: 10,
             ),
@@ -765,7 +718,6 @@ class _ChatBubblesState extends State<ChatBubbles> {
                 ),
               ],
             ),
-            // if (!widget.bPreUser) showProfileImage(),
             showProfileImage(),
             Positioned(
               bottom: 0,

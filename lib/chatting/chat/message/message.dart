@@ -65,9 +65,6 @@ class _MessagesState extends State<Messages> {
           );
         }
         final chatDocs = snapshot.data!.docs;
-        // String preUserID = "";
-        // int preTypeIndex = 0;
-        // bool bPreUser = false;
 
         return ListView.builder(
           padding: const EdgeInsets.only(top: 10, bottom: 10),
@@ -80,11 +77,6 @@ class _MessagesState extends State<Messages> {
             final userImageURL = userImage[userID]!;
             final type = LogType.values[chatDoc['type']];
             final logDocRef = logRef.doc(chatDoc.id);
-
-            // bPreUser =
-            //     userID == preUserID && preTypeIndex < LogType.enter.index;
-            // preUserID = userID;
-            // preTypeIndex = type.index;
 
             switch (type) {
               case LogType.text:

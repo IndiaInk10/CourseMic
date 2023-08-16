@@ -46,7 +46,6 @@ class ChatListState extends State<ChatList> with WidgetsBindingObserver {
     secureStorage.read(key: "lastNotification").then((lastNoification) async {
       if (lastNoification == null) return;
       if (lastNoification.isEmpty) return;
-      // secureStorage.write(key: "lastNotification", value: "");
       var roomID = lastNoification.split(" ")[1];
       lastMessage = lastNoification.split(" ")[3];
 
@@ -66,7 +65,6 @@ class ChatListState extends State<ChatList> with WidgetsBindingObserver {
         ),
       );
     });
-    // backgroundNotificationToChat();
   }
 
   @override
@@ -80,16 +78,6 @@ class ChatListState extends State<ChatList> with WidgetsBindingObserver {
     if (state == AppLifecycleState.resumed) {
       backgroundNotificationToChat();
     }
-    // switch (state) {
-    //   case AppLifecycleState.resumed:
-    //     break;
-    //   case AppLifecycleState.inactive:
-    //     break;
-    //   case AppLifecycleState.paused:
-    //     break;
-    //   case AppLifecycleState.detached:
-    //     break;
-    // }
   }
 
   void backgroundNotificationToChat() async {

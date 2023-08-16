@@ -343,7 +343,6 @@ class SimpleImportantMessage extends StatelessWidget {
                               crossAxisAlignment:
                                   CrossAxisAlignment.start, //제거시 날짜 중앙 정렬
                               children: [
-                                // const Divider(color: Palette.darkGray),
                                 Text(
                                   fmtTime,
                                   style: const TextStyle(
